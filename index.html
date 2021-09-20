@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tourism Agency Website</title>
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <a href="#" class="logo-text">Travela</a>
+      </div>
+      <nav class="nav">
+        <ul class="items">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Service</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="heading">
+      <p>Tourism for the 21st Century!</p>
+      <h2><span>Anything</span> Could Happen!</h2>
+      <a href="#">Learn More</a>
+    </div>
+
+    <div class="icon">
+      <i class="uil uil-bars"></i>
+    </div>
+
+    <script>
+      const navBar = document.querySelector(".container");
+      const logo = document.querySelector(".logo");
+      const logoText = document.querySelector(".logo-text");
+      const navLinks = document.querySelectorAll(".nav .items li a");
+
+      const logoHover = () => {
+        logo.addEventListener("mouseover", () => {
+          logoText.style.color = "black";
+          navBar.style.background = "black";
+          navBar.style.transition = "all 0.75s ease-in-out";
+        });
+        logo.addEventListener("mouseout", () => {
+          logoText.style.color = "";
+          navBar.style.background = "";
+        });
+      };
+      const linkHover = () => {
+        navLinks.forEach((link) => {
+          link.addEventListener("mouseover", () => {
+            navBar.style.background = "black";
+            navBar.style.transition = "all 0.75s ease-in-out";
+          });
+        });
+
+        navLinks.forEach((link) => {
+          link.addEventListener("mouseout", () => {
+            navBar.style.background = "";
+          });
+        });
+      };
+      logoHover();
+      linkHover();
+    </script>
+  </body>
+</html>
